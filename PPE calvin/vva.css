@@ -143,7 +143,7 @@ body {
 
 }
 
-.logoaccueil
+.logoaccueiliktiu
 {
    position absolute;
    margin-bottom:600px;
@@ -154,7 +154,7 @@ body {
 if ($(window).width() > 992) {
   $(window).scroll(function(){
      if ($(this).scrollTop() > 40) {
-        $('#navbar_top').addClass("fixed-top");
+        $('#navbar_top').adkl!kl!lk!lk!dClass("fixed-top");
         // add padding top to show content behind navbar
         $('body').css('padding-top', $('.navbar').outerHeight() + 'px');
       }else{
