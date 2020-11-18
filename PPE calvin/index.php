@@ -17,39 +17,22 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-    <div class="container">
-    <div class="row">
-      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <div class="card card-signin my-5">
-          <div class="card-body">
-            <h5 class="card-title text-center">Connexion</h5>
-
-            <form class="form-signin" action="connexion.php" method="post">
-
-              <div class="form-label-group ">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required autofocus>
-                <label for="inputEmail">E-Mail</label>
-              </div>
-
-              <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="mdp" required>
-                <label for="inputPassword">Mot de Passe</label>
-              </div>
-
-              <div class="custom-control custom-checkbox mb-3">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                <label class="custom-control-label" for="customCheck1">Se souvenir</label>
-              </div>
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
-              <hr class="my-4">
-            </form>
-          </div>
+    <div class="containerIndex">
+      <font size="+5"><center style="color: white">connexion</center></font>
+      <form action="connexion.php" method="post" class="form-example">
+        <div class="form-group" id="email">
+          <label style="color: white" for="exampleInputEmail1">User</label>
+          <input type="text" name="user" class="form-control form-control-lg" id="exampleInput"  placeholder="Entrer user">
         </div>
-      </div>
-    </div>
-  </div>
+        <div class="form-group" id="motdepasse">
+          <label style="color: white" for="exampleInputPassword1">Mot de Passe</label>
+          <input type="password" name="motdepasse" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Mot de passe">
+        </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block" >Se connecter</button>
+     </form>
+   </div>
 
-  <img class="logoindex" src="images/logoremove.png" alt="">
+<img class="logoIndex" src="images/logoRemove.png" alt="">
 
 
 
