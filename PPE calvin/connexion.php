@@ -1,9 +1,4 @@
-<?php
-session_start();
-include ("fonctions.php");
-?>
 <!doctype html>
-
 <html lang="fr">
   <head>
     <!-- Required meta tags -->
@@ -37,7 +32,9 @@ include ("fonctions.php");
      </form>
    </div>
 
+
 <img class="logoIndex" src="images/logoRemove.png" alt="">
+
 
 
 
