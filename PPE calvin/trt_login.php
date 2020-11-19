@@ -18,11 +18,11 @@ if($ligne = mysqli_fetch_assoc($res))
 		$_SESSION['ADRESSEMAIL'] = $ligne['ADRESSEMAIL'];
 		$_SESSION['NOTELCOMPTE'] = $ligne['NOTELCOMPTE'];
 		$_SESSION['TYPEPROFIL'] = $ligne['TYPEPROFIL'];
-		header('Location: accueil.php');
+		header("Location: accueil.php");
 		mysqli_close();
-		
+
 }
-else 
+else
 	echo "Erreur";
-header('Refresh: 100; index.php');
+header('Refresh:3 ; index.php');
 ?>

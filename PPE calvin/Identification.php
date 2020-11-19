@@ -30,7 +30,7 @@ include ("fonctions.php");
           <input type="text" name="user" class="form-control form-control-lg" id="exampleInput"  placeholder="Entrer user">
         </div>
         <div class="form-group" id="motdepasse">
-          <label style="color: white" for="exampleInputPassword1">Mot de Passe alors ça jamais!</label>
+          <label style="color: white" for="exampleInputPassword1">Mot de Passe</label>
           <input type="password" name="mdp" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Mot de passe">
         </div>
       <button type="submit" class="btn btn-primary btn-lg btn-block" >Se connecter</button>
