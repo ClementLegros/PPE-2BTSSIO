@@ -3,8 +3,9 @@ session_start();
 if(empty($_SESSION))
 {
   echo "error";
-  header('Location: index.php');
+  header('Location: connexion.php');
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -60,9 +61,11 @@ if(empty($_SESSION))
       include("animation.php");
 
       break;
+
       case 'profil':
       include("profil.php");
       break;
+      
       case 'activite':
       include("activite.php");
       break;

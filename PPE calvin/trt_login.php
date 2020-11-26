@@ -10,6 +10,7 @@ $res = mysqli_query(bddConnect(), $req);
 
 if($ligne = mysqli_fetch_assoc($res))
 {
+	
 		$_SESSION['USER'] = $ligne['USER'];
 		$_SESSION['MDP'] = $ligne['MDP'];
 		$_SESSION['NOMCOMPTE'] =$ligne['NOMCOMPTE'];
