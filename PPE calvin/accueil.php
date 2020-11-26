@@ -33,7 +33,7 @@ session_start();
         <a class="nav-link" href="accueil.php">Accueil <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Activité</a>
+        <a class="nav-link" href="animations.php">Animation</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
