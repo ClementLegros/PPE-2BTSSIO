@@ -63,6 +63,10 @@ if(empty($_SESSION))
       case 'profil':
       include("profil.php");
       break;
+      case 'activite':
+      include("activite.php");
+      break;
+
     }
   }
 
