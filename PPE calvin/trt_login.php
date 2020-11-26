@@ -4,10 +4,9 @@ include("fonctions.php");
 mysqli_set_charset($con, "utf8");
 $user = $_POST['user'];
 $mdp = $_POST['mdp'];
-$con = bddConnect();
 
 $req = "SELECT* FROM COMPTE WHERE USER = '$user' AND MDP = '$mdp'";
-$res = mysqli_query($con, $req);
+$res = mysqli_query(bddConnect(), $req);
 
 if($ligne = mysqli_fetch_assoc($res))
 {
@@ -25,5 +24,5 @@ if($ligne = mysqli_fetch_assoc($res))
 }
 else
 	echo "Erreur";
-header('Refresh:3 ; connexion.php');
+header('Refresh:3 ; index.php');
 ?>
