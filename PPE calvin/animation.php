@@ -40,7 +40,7 @@ bddConnect();
             $req = "SELECT NOMTYPEANIM, CODETYPEANIM FROM TYPE_ANIM;";
             $res = mysqli_query(bddConnect(), $req);
             while ($lignes = mysqli_fetch_assoc($res)) {
-              echo "<option value=".$lignes['NOMTYPEANIM'].">".$lignes['CODETYPEANIM']."</option>";
+              echo "<option value=".$lignes['CODETYPEANIM'].">".$lignes['CODETYPEANIM']."</option>";
             }
             ?>
           </select>

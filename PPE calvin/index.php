@@ -3,7 +3,7 @@ session_start();
 if(empty($_SESSION))
 {
   echo "error";
-  header('Location: connexion.php');
+  header('Location: identification.php');
 }
 
 ?>
@@ -65,7 +65,7 @@ if(empty($_SESSION))
       case 'profil':
       include("profil.php");
       break;
-      
+
       case 'activite':
       include("activite.php");
       break;
