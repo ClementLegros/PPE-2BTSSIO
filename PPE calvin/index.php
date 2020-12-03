@@ -44,7 +44,7 @@ if(empty($_SESSION))
             <?php
             if(isset($_SESSION))
             {
-              echo "<a class="dropdown-item" href="trt_dropout.php">deconnexion</a>"
+              echo "<a class="dropdown-item" href="trt_dropout.php">deconnexion</a>";
             }
             ?>
           </div>
