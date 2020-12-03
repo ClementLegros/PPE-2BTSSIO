@@ -25,5 +25,5 @@ if($ligne = mysqli_fetch_assoc($res))
 }
 else
 	echo "Erreur";
-header('Refresh:3 ; index.php');
+header('Refresh:1 ; index.php?index=accueil');
 ?>

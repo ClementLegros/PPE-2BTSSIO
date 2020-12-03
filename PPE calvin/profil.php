@@ -18,11 +18,6 @@ session_start();
        <td>age: <?php echo $_SESSION['PRENOMCOMPTE']; ?></td>
        <td>date creation compte: <?php echo $_SESSION['TYPEPROFIL']  ?></td>
    </tr>
-   <tr>
-       <td>Michelle</td>
-       <td>26 ans</td>
-       <td>États-Unis</td>
-   </tr>
 </table>
 
   </body>

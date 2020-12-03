@@ -3,9 +3,12 @@
 include("fonctions.php");
 bddConnect();
 ?>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
+<?php if(isset($_SESSION['USER'])=='EN'){
+echo "<button type="button" class=\"btn btn-primary\" data-toggle=\"modal\">
+  Enregistrer animation
+</button>"
+}
+?>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -91,10 +94,43 @@ bddConnect();
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-          <button type="submit" form="insertanim" class="btn btn-primary">Ajouter</button>
+          <button type="button"  class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+          <button type="submit" name="button" form="insertanim" class="btn btn-primary">Ajouter</button>
+
         </form>
+
       </div>
     </div>
   </div>
 </div>
+<?php
+mysqli_set_charset(bddConnect(), "utf8");
+$req = "SELECT* FROM ANIMATION";
+$res = mysqli_query(bddConnect(), $req);
+
+while($ligne = mysqli_fetch_assoc($res))
+{
+  $NOMANIM =$ligne['NOMANIM'];
+  $DATECREATIONANIM = $ligne['DATECREATIONANIM'];
+  $DATEVALIDITEANIM = $ligne['DATEVALIDITEANIM'];
+  $DUREEANIM = $ligne['DUREEANIM'];
+  $LIMITEAGE = $ligne['LIMITEAGE'];
+  $TARIFANIM= $ligne['TARIFANIM'];
+  $NBREPLACEANIMs = $ligne['NBREPLACEANIM'];
+  $DESCRIPTANIM = $ligne['DESCRIPTANIM'];
+  $COMMENTANIM = $ligne[	'COMMENTANIM'];
+  $DIFFICULTEANIM =  $ligne['DIFFICULTEANIM'];
+
+
+    echo "<div class=\"card\" style=\"width: 18rem;\">
+    <img src=\"bellemontagne.jpg\" class=\"card-img-top\" alt=\"...\">
+    <div class=\"card-body\">
+    <h5 class=\"card-title\">".$NOMANIM."</h5>
+    <p class=\"card-text\">".$DESCRIPTANIM."</p>s
+    <a href=\"activite.php\" class=\"btn btn-primary\">Go somewhere</a>
+    </div>
+    </div>";
+    mysqli_close(bddConnect());
+
+  }
+?>
