@@ -41,7 +41,12 @@ if(empty($_SESSION))
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="index.php?index=profil">Profil</a>
-            <a class="dropdown-item" href="trt_dropout.php">deconnexion</a>
+            <?php
+            if(isset($_SESSION))
+            {
+              echo "<a class="dropdown-item" href="trt_dropout.php">deconnexion</a>"
+            }
+            ?>
           </div>
         </li>
       </ul>

@@ -1,7 +1,4 @@
 <?php
-
-session_destroy();
-header('location/identification.php');
-exit;
-
+  session_destroy();
+  header('location/identification.php');
  ?>
