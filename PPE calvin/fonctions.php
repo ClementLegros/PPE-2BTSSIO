@@ -4,8 +4,5 @@ function bddConnect(){
   return $con;
 }
 
-function deconnexion(){
-  $deco = session_destroy();
-  return  $deco;
-}
+
 ?>

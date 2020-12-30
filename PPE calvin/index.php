@@ -47,8 +47,10 @@ if(empty($_SESSION))
               echo "Vous êtes deco";
             }
             else{
-              session_destroy();
-              //echo "<a class=\"dropdown-item\" href=\"trt_dropout.php\">deconnexion</a>";
+
+              echo "<form method=\"get\" action=\"trt_dropout.php\"><a class=\"dropdown-item\" href=\"identification.php\">deconnexion</a>
+              </form>";
+
             }
             ?>
           </div>

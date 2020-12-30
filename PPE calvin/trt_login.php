@@ -19,7 +19,7 @@ if($ligne = mysqli_fetch_assoc($res))
 		$_SESSION['ADRESSEMAIL'] = $ligne['ADRESSEMAIL'];
 		$_SESSION['NOTELCOMPTE'] = $ligne['NOTELCOMPTE'];
 		$_SESSION['TYPEPROFIL'] = $ligne['TYPEPROFIL'];
-		header("Location: accueil.php");
+		header("Location: index.php?index=accueil");
 		mysqli_close();
 
 }
