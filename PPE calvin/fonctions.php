@@ -4,5 +4,4 @@ function bddConnect(){
   return $con;
 }
 
-
 ?>

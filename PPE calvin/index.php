@@ -73,6 +73,10 @@ if(empty($_SESSION))
 
       break;
 
+      case 'create':
+      include("create.php");
+      break;
+
       case 'profil':
       include("profil.php");
       break;
