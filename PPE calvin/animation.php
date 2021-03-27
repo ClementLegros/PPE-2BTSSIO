@@ -4,7 +4,7 @@ include("fonctions.php");
 bddConnect();
 ?>
 <?php if(isset($_SESSION['USER'])=='EN'){
-echo "<a href=\"creationAnimation.php\" class=\"btn btn-primary btn-lg\" tabindex=\"-1\" role=\"button\" aria-disabled=\"true\">Primary link</a>";
+echo "<a href=\"index.php?index=create\" class=\"btn btn-primary btn-lg\" tabindex=\"-1\" role=\"button\" aria-disabled=\"true\">Primary link</a>";
 }
 ?>
 
