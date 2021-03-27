@@ -10,7 +10,7 @@ echo "<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" da
 }
 ?>
 <!-- Modal -->
-<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -123,14 +123,15 @@ while($ligne = mysqli_fetch_assoc($res))
 
 
     echo "<div class=\"card\" style=\"width: 18rem;\">
-    <img src=\"bellemontagne.jpg\" class=\"card-img-top\" alt=\"...\">
+    <img src=$COMMENTANIM class=\"card-img-top\" alt=\"...\">
     <div class=\"card-body\">
     <h5 class=\"card-title\">".$NOMANIM."</h5>
     <p class=\"card-text\">".$DESCRIPTANIM."</p>s
-    <a href=\"activite.php\" class=\"btn btn-primary\">Go somewhere</a>
+    <a href=\"activite.php\" class=\"btn btn-primary\">Voir les activités</a>
+    <a href=\"\" class=\"btn btn-primary\">Modifier activité</a>
     </div>
     </div>";
     mysqli_close(bddConnect());
 
-  }
+  } -->
 ?>
