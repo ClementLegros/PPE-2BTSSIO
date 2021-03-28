@@ -3,7 +3,7 @@
 include("fonctions.php");
 bddConnect();
 ?>
-<form class="" action="trt_enreg_anim.php" method="post">
+<form class="insertanim" action="trt_enreg_anim.php" method="post">
   <label>Code anime</label>
   <select class="custom-select" name="CODEANIM" id="inputGroupSelect01">
     <option selected>Choose...</option>
@@ -70,7 +70,7 @@ bddConnect();
   <label>Difficulte animation:</label>
   <input class="form-control" type="text" name="DIFFICULTEANIM" placeholder="Default input">
 
-
-  <button href="animation.php" type="submit" name="button" form="insertanim" class="btn btn-primary">Ajouter</button>
+  <input type="submit" value="Subscribe!">
+  <!-- <button type="submit" name="button" form="insertanim" class="btn btn-primary">Ajouter ezaaeaer</button> -->
 
 </form>

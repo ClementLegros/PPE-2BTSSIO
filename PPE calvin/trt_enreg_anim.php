@@ -1,7 +1,6 @@
 <?php
 include("fonctions.php");
 mysqli_set_charset(bddConnect(), "utf8");
-bddConnect();
 $CDANIM = $_POST['CODEANIM'];
 $CDTYPEANIM = $_POST['CODETYPEANIM'];
 $NOMANIM = $_POST['NOMANIM'];
