@@ -34,8 +34,8 @@ while($ligne = mysqli_fetch_assoc($res))
     <div class=\"card-body\">
     <h5 class=\"card-title\">".$NOMANIM."</h5>
     <p class=\"card-text\">".$DESCRIPTANIM."</p>
-    <form class="" action=\"index.php?index=activite\" method=\"post\">
-    <a id=\"$i\" href=\"activite.php\" class=\"btn btn-primary\">Voir les activités</a>
+    <form  action=\"index.php?index=activite\" method=\"post\">
+    <a id=\"$i\" href=\"index.php?index=activite\" class=\"btn btn-primary\">Voir les activités</a>
     <a href=\"\" class=\"btn btn-primary\">Modifier activité</a>
     </form>
     </div>
