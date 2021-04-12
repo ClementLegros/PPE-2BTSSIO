@@ -1,3 +1,4 @@
+#Créer une animation
 <?php
 include("fonctions.php");
 mysqli_set_charset(bddConnect(), "utf8");

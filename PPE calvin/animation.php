@@ -17,6 +17,8 @@ $i = 0;
 while($ligne = mysqli_fetch_assoc($res))
 {
   $i = $i + 1;
+  $CODEANIM = $ligne['CODEANIM'];
+  $CODETYPEANIM = $ligne['CODETYPEANIM'];
   $NOMANIM =$ligne['NOMANIM'];
   $DATECREATIONANIM = $ligne['DATECREATIONANIM'];
   $DATEVALIDITEANIM = $ligne['DATEVALIDITEANIM'];
@@ -34,10 +36,9 @@ while($ligne = mysqli_fetch_assoc($res))
     <div class=\"card-body\">
     <h5 class=\"card-title\">".$NOMANIM."</h5>
     <p class=\"card-text\">".$DESCRIPTANIM."</p>
-    <form  action=\"index.php?index=activite\" method=\"post\">
-    <a id=\"$i\" href=\"index.php?index=activite\" class=\"btn btn-primary\">Voir les activités</a>
+    <p>Type d'Animation:$CODETYPEANIM </p>
+    <a id=\"$i\" href=\"index.php?index=activite&activite=$CODEANIM\" class=\"btn btn-primary\">Voir les activités</a>
     <a href=\"\" class=\"btn btn-primary\">Modifier activité</a>
-    </form>
     </div>
     </div>";
     mysqli_close(bddConnect());

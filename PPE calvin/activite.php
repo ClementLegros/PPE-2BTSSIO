@@ -1,21 +1,17 @@
-<!--
-// session_start();
-// include("fonctions.php");
-// mysqli_set_charset($con, "utf8");
-// $id = $_GET['id'];
-//
-// $req = "SELECT * FROM ACTIVITE WHERE CODEANIM = $id;
-// $res = mysqli_query(bddConnect(), $req); -->
+<?php
+include("fonctions.php");
+$con = bddConnect();
+mysqli_set_charset($con, "utf8");
+$ID = $_GET['activite'];
+if(!empty($_GET['activite']))
+{
+	$req = "SELECT * FROM ACTIVITE WHERE CODEANIM = $ID";
+	$res = mysqli_query($con, $req);
+  echo "<table class=\"table table-dark table-striped\">";
+  while($ligne = mysqli_fetch_assoc($res))
+  {
 
-
-
-<tr>
-  <td class="table-primary">...</td>
-  <td class="table-secondary">...</td>
-  <td class="table-success">...</td>
-  <td class="table-danger">...</td>
-  <td class="table-warning">...</td>
-  <td class="table-info">...</td>
-  <td class="table-light">...</td>
-  <td class="table-dark">...</td>
-</tr>
+  }
+  echo "</table>";
+}
+?>
