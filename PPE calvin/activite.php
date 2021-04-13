@@ -23,7 +23,7 @@ if(!empty($_GET['activite']))
 			 <th>REPONSABLE</th>
 			 <th> INSCRIPTION <th>
 			 ";
-	     if($SESSION['USER'] == 'EN')
+	     if($_SESSION['USER'] == 'EN')
 	     {
 	       echo	"<th>LISTE DES PARTICIPANTS</th>";
 	     }
@@ -54,7 +54,7 @@ if(!empty($_GET['activite']))
 					 <td>$DATEANNULEACT</td>
 					 <td>$NOMRESP $PRENOMRESP</td>
            <td> <button type=\"button\" class=\"btn btn-success\">INSCRIPTION</button> </td>";
-		 	if($SESSION['USER'] == 'EN')#SI LE PROFIL EST ENCADRANT ALORS ON AFFICHE UN BOUTON CONSULTE ANNIME
+		 	if($_SESSION['USER'] == 'EN')#SI LE PROFIL EST ENCADRANT ALORS ON AFFICHE UN BOUTON CONSULTE ANNIME
 			 {
 			   echo	"<td><button type=\"button\" class=\"btn btn-info\">CONSULTER LES PARTICIPANTS</button></td>";
 			 }
