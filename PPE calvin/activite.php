@@ -16,16 +16,18 @@ if(!empty($_GET['activite']))
 			 <th>STATUT</th>
 			 <th>DATE DE PUBLICATION</th>
 			 <th>HEURE RDV</th>
-			 <th>PRIX</th>
+			 <th>PRIX(€)</th>
 			 <th>HEURE DEBUT</th>
 			 <th>HEURE FIN ACT</th>
 			 <th>DATE ANNULATION</th>
 			 <th>REPONSABLE</th>
-			 <th> INSCRIPTION <th>
+			 <th> INSCRIPTION </th>
 			 ";
-	     if($_SESSION['USER'] == 'EN')
+	     if($_SESSION['TYPEPROFIL'] == 'EN')
 	     {
-	       echo	"<th>LISTE DES PARTICIPANTS</th>";
+	        echo	"<th>LISTE DES PARTICIPANTS</th>
+					       <th></th>";
+
 	     }
 	echo "</tr>";
   while($ligne = mysqli_fetch_assoc($res))
@@ -53,13 +55,22 @@ if(!empty($_GET['activite']))
 					 <td>$HRFINACT</td>
 					 <td>$DATEANNULEACT</td>
 					 <td>$NOMRESP $PRENOMRESP</td>
-           <td> <button type=\"button\" class=\"btn btn-success\">INSCRIPTION</button> </td>";
-		 	if($_SESSION['USER'] == 'EN')#SI LE PROFIL EST ENCADRANT ALORS ON AFFICHE UN BOUTON CONSULTE ANNIME
+					 <form class=\"\" action=\"trt_inscrip_act.php\" method=\"post\">
+					 	 <td> <button type=\"button\" class=\"btn btn-success\">INSCRIPTION</button> </td>
+					 </form>";
+		 	if($_SESSION['TYPEPROFIL'] == 'EN')#SI LE PROFIL EST ENCADRANT ALORS ON AFFICHE UN BOUTON CONSULTE ANNIME
 			 {
-			   echo	"<td><button type=\"button\" class=\"btn btn-info\">CONSULTER LES PARTICIPANTS</button></td>";
+			   echo	"<td><form class=\"\" action=\"\" method=\"\">
+				 	<button type=\"button\" class=\"btn btn-info\">INSCRITS</button>
+				 </form></td>";
+
+				 echo "<td> <form class=\"\" action=\"\" method=\"\">
+				 	<button type=\"button\" class=\"btn btn-danger\">ANNULER</button>
+				 </form></td>";
 			 }
 		echo "</tr>";
   }
   echo "</table>";
+
 }
 ?>
