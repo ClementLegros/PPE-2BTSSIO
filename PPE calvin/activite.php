@@ -45,6 +45,7 @@ if(!empty($_GET['activite']))
 			$PRENOMRESP = $ligne['PRENOMRESP'];
        echo "
 				<tr>
+				   <form class=\"\" action=\"trt_inscrip_act.php\" method=\"get\">
 				   <td>$NOACT</td>
 					 <td>$CODEANIM</td>
 					 <td>$CODEETATACT</td>
@@ -55,7 +56,7 @@ if(!empty($_GET['activite']))
 					 <td>$HRFINACT</td>
 					 <td>$DATEANNULEACT</td>
 					 <td>$NOMRESP $PRENOMRESP</td>
-					 <form class=\"\" action=\"trt_inscrip_act.php\" method=\"post\">
+
 					 	 <td> <button type=\"button\" class=\"btn btn-success\">INSCRIPTION</button> </td>
 					 </form>";
 		 	if($_SESSION['TYPEPROFIL'] == 'EN')#SI LE PROFIL EST ENCADRANT ALORS ON AFFICHE UN BOUTON CONSULTE ANNIME
