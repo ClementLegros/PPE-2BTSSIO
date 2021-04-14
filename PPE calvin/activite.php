@@ -4,6 +4,12 @@ include("fonctions.php");
 $con = bddConnect();
 mysqli_set_charset($con, "utf8");
 $ID = $_GET['activite'];
+$TYPEPROFIL = $_SESSION['TYPEPROFIL'];
+$USER = $_SESSION['USER'];
+$DATEDEBSEJOUR = $_SESSION['DATEDEBSEJOUR'];
+$DATEFINSEJOUR = $_SESSION['DATEFINSEJOUR'];
+
+
 if(!empty($_GET['activite']))
 {
 	$req = "SELECT * FROM ACTIVITE WHERE CODEANIM = $ID";
@@ -23,7 +29,7 @@ if(!empty($_GET['activite']))
 			 <th>REPONSABLE</th>
 			 <th> INSCRIPTION </th>
 			 ";
-	     if($_SESSION['TYPEPROFIL'] == 'EN')
+	     if($TYPEPROFIL == 'EN')
 	     {
 	        echo	"<th>LISTE DES PARTICIPANTS</th>
 					       <th></th>";
@@ -45,7 +51,7 @@ if(!empty($_GET['activite']))
 			$PRENOMRESP = $ligne['PRENOMRESP'];
        echo "
 				<tr>
-				   <form class=\"\" action=\"trt_inscrip_act.php\" method=\"get\">
+				   <form class=\"\" action=\"trt_inscrip_act.php?CODEANIM=$CODEANIM&USER=$USER&NOACT=$NOACT&DATEANNULEACT=$DATEANNULEACT&DATEDEBSEJOUR=$DATEDEBSEJOUR&DATEFINSEJOUR=$DATEFINSEJOUR\" method=\"post\">
 				   <td>$NOACT</td>
 					 <td>$CODEANIM</td>
 					 <td>$CODEETATACT</td>
@@ -57,16 +63,16 @@ if(!empty($_GET['activite']))
 					 <td>$DATEANNULEACT</td>
 					 <td>$NOMRESP $PRENOMRESP</td>
 
-					 	 <td> <button type=\"button\" class=\"btn btn-success\">INSCRIPTION</button> </td>
+					 	 <td> <button type=\"submit\" class=\"btn btn-success\">INSCRIPTION</button> </td>
 					 </form>";
-		 	if($_SESSION['TYPEPROFIL'] == 'EN')#SI LE PROFIL EST ENCADRANT ALORS ON AFFICHE UN BOUTON CONSULTE ANNIME
+		 	if($TYPEPROFIL == 'EN')#SI LE PROFIL EST ENCADRANT ALORS ON AFFICHE UN BOUTON CONSULTE ANNIME
 			 {
 			   echo	"<td><form class=\"\" action=\"\" method=\"\">
-				 	<button type=\"button\" class=\"btn btn-info\">INSCRITS</button>
+				 	<button type=\"submit\" class=\"btn btn-info\">INSCRITS</button>
 				 </form></td>";
 
 				 echo "<td> <form class=\"\" action=\"\" method=\"\">
-				 	<button type=\"button\" class=\"btn btn-danger\">ANNULER</button>
+				 	<button type=\"submit\" class=\"btn btn-danger\">ANNULER</button>
 				 </form></td>";
 			 }
 		echo "</tr>";

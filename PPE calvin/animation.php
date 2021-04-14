@@ -37,7 +37,7 @@ while($ligne = mysqli_fetch_assoc($res))
     <p class=\"card-text\">".$DESCRIPTANIM."</p>
     <p>Type d'Animation:$CODETYPEANIM </p>
     <a href=\"index.php?index=activite&activite=$CODEANIM\" class=\"btn btn-primary\">Voir les activités</a>
-    <a href=\"\" class=\"btn btn-primary\">Modifier activité</a>
+    <a href=\"\" class=\"btn btn-info\">Modifier activité</a>
     </div>
     </div>";
     mysqli_close(bddConnect());
