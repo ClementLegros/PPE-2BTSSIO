@@ -15,69 +15,69 @@ if(!empty($_GET['activite']))
 	$req = "SELECT * FROM ACTIVITE WHERE CODEANIM = $ID";
 	$res = mysqli_query($con, $req);
 	#CONSTRUCTION D'UN TABLEAU QUI PERMET D'AFFICHER LES ANIMATIONS
-  echo "<table class=\"table table-dark table-striped\">";
+	echo "<table class=\"table table-dark table-striped\">";
 	echo"<tr>
-			 <th>NOACT</th>
-			 <th>ANIMATION D'ORIGINE</th>
-			 <th>STATUT</th>
-			 <th>DATE DE PUBLICATION</th>
-			 <th>HEURE RDV</th>
-			 <th>PRIX(€)</th>
-			 <th>HEURE DEBUT</th>
-			 <th>HEURE FIN ACT</th>
-			 <th>DATE ANNULATION</th>
-			 <th>REPONSABLE</th>
-			 <th> INSCRIPTION </th>
-			 ";
-	     if($TYPEPROFIL == 'EN')
-	     {
-	        echo	"<th>LISTE DES PARTICIPANTS</th>
-					       <th></th>";
+	<th>NOACT</th>
+	<th>ANIMATION D'ORIGINE</th>
+	<th>STATUT</th>
+	<th>DATE DE PUBLICATION</th>
+	<th>HEURE RDV</th>
+	<th>PRIX(€)</th>
+	<th>HEURE DEBUT</th>
+	<th>HEURE FIN ACT</th>
+	<th>DATE ANNULATION</th>
+	<th>REPONSABLE</th>
+	<th> INSCRIPTION </th>
+	";
+	if($TYPEPROFIL == 'EN')
+	{
+		echo	"<th>LISTE DES PARTICIPANTS</th>
+		<th></th>";
 
-	     }
+	}
 	echo "</tr>";
-  while($ligne = mysqli_fetch_assoc($res))
-  {
-		  $NOACT = $ligne['NOACT'];
-			$CODEANIM = $ligne['CODEANIM'];
-			$CODEETATACT = $ligne['CODEETATACT'];
-		  $DATEACT = $ligne['DATEACT'];
-			$HRRDVACT = $ligne['HRRDVACT'];
-			$PRIXACT = $ligne['PRIXACT'];
-			$HRDEBUTACT = $ligne['HRDEBUTACT'];
-			$HRFINACT = $ligne['HRFINACT'];
-			$DATEANNULEACT = $ligne['DATEANNULEACT'];
-			$NOMRESP = $ligne['NOMRESP'];
-			$PRENOMRESP = $ligne['PRENOMRESP'];
-       echo "
-				<tr>
-				   <form class=\"\" action=\"trt_inscrip_act.php?CODEANIM=$CODEANIM&USER=$USER&NOACT=$NOACT&DATEANNULEACT=$DATEANNULEACT&DATEDEBSEJOUR=$DATEDEBSEJOUR&DATEFINSEJOUR=$DATEFINSEJOUR\" method=\"post\">
-				   <td>$NOACT</td>
-					 <td>$CODEANIM</td>
-					 <td>$CODEETATACT</td>
-					 <td>$DATEACT	</td>
-					 <td>$HRRDVACT</td>
-					 <td>$PRIXACT</td>
-					 <td>$HRDEBUTACT</td>
-					 <td>$HRFINACT</td>
-					 <td>$DATEANNULEACT</td>
-					 <td>$NOMRESP $PRENOMRESP</td>
+	while($ligne = mysqli_fetch_assoc($res))
+	{
+		$NOACT = $ligne['NOACT'];
+		$CODEANIM = $ligne['CODEANIM'];
+		$CODEETATACT = $ligne['CODEETATACT'];
+		$DATEACT = $ligne['DATEACT'];
+		$HRRDVACT = $ligne['HRRDVACT'];
+		$PRIXACT = $ligne['PRIXACT'];
+		$HRDEBUTACT = $ligne['HRDEBUTACT'];
+		$HRFINACT = $ligne['HRFINACT'];
+		$DATEANNULEACT = $ligne['DATEANNULEACT'];
+		$NOMRESP = $ligne['NOMRESP'];
+		$PRENOMRESP = $ligne['PRENOMRESP'];
+		echo "
+		<tr>
+		<form class=\"\" action=\"trt_inscrip_act.php?CODEANIM=$CODEANIM&USER=$USER&NOACT=$NOACT&DATEANNULEACT=$DATEANNULEACT&DATEDEBSEJOUR=$DATEDEBSEJOUR&DATEFINSEJOUR=$DATEFINSEJOUR\" method=\"post\">
+		<td>$NOACT</td>
+		<td>$CODEANIM</td>
+		<td>$CODEETATACT</td>
+		<td>$DATEACT	</td>
+		<td>$HRRDVACT</td>
+		<td>$PRIXACT</td>
+		<td>$HRDEBUTACT</td>
+		<td>$HRFINACT</td>
+		<td>$DATEANNULEACT</td>
+		<td>$NOMRESP $PRENOMRESP</td>
 
-					 	 <td> <button type=\"submit\" class=\"btn btn-success\">INSCRIPTION</button> </td>
-					 </form>";
-		 	if($TYPEPROFIL == 'EN')#SI LE PROFIL EST ENCADRANT ALORS ON AFFICHE UN BOUTON CONSULTE ANNIME
-			 {
-			   echo	"<td><form class=\"\" action=\"\" method=\"\">
-				 	<button type=\"submit\" class=\"btn btn-info\">INSCRITS</button>
-				 </form></td>";
+		<td> <button type=\"submit\" class=\"btn btn-success\">INSCRIPTION</button> </td>
+		</form>";
+		if($TYPEPROFIL == 'EN')#SI LE PROFIL EST ENCADRANT ALORS ON AFFICHE UN BOUTON CONSULTE ANNIME
+		{
+			echo	"<td><form class=\"\" action=\"\" method=\"\">
+			<button type=\"submit\" class=\"btn btn-info\">INSCRITS</button>
+			</form></td>";
 
-				 echo "<td> <form class=\"\" action=\"\" method=\"\">
-				 	<button type=\"submit\" class=\"btn btn-danger\">ANNULER</button>
-				 </form></td>";
-			 }
+			echo "<td> <form class=\"\" action=\"\" method=\"\">
+			<button type=\"submit\" class=\"btn btn-danger\">ANNULER</button>
+			</form></td>";
+		}
 		echo "</tr>";
-  }
-  echo "</table>";
+	}
+	echo "</table>";
 
 }
 ?>

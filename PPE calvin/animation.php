@@ -3,10 +3,10 @@
 include("fonctions.php");
 bddConnect();
 
- if($_SESSION['TYPEPROFIL'] == 'EN')
- {
-      echo "<a href=\"index.php?index=create\" class=\"btn btn-primary btn-lg\" tabindex=\"-1\" role=\"button\" aria-disabled=\"true\">Primary link</a>";
- }
+if($_SESSION['TYPEPROFIL'] == 'EN')
+{
+  echo "<a href=\"index.php?index=create\" class=\"btn btn-primary btn-lg\" tabindex=\"-1\" role=\"button\" aria-disabled=\"true\">Primary link</a>";
+}
 ?>
 
 <?php
@@ -30,17 +30,17 @@ while($ligne = mysqli_fetch_assoc($res))
   $DIFFICULTEANIM =  $ligne['DIFFICULTEANIM'];
 
 
-    echo "<div class=\"card\" style=\"width: 18rem;\">
-    <img src=$COMMENTANIM class=\"card-img-top\" alt=\"...\">
-    <div class=\"card-body\">
-    <h5 class=\"card-title\">".$NOMANIM."</h5>
-    <p class=\"card-text\">".$DESCRIPTANIM."</p>
-    <p>Type d'Animation:$CODETYPEANIM </p>
-    <a href=\"index.php?index=activite&activite=$CODEANIM\" class=\"btn btn-primary\">Voir les activités</a>
-    <a href=\"\" class=\"btn btn-info\">Modifier activité</a>
-    </div>
-    </div>";
-    mysqli_close(bddConnect());
+  echo "<div class=\"card\" style=\"width: 18rem;\">
+  <img src=$COMMENTANIM class=\"card-img-top\" alt=\"...\">
+  <div class=\"card-body\">
+  <h5 class=\"card-title\">".$NOMANIM."</h5>
+  <p class=\"card-text\">".$DESCRIPTANIM."</p>
+  <p>Type d'Animation:$CODETYPEANIM </p>
+  <a href=\"index.php?index=activite&activite=$CODEANIM\" class=\"btn btn-primary\">Voir les activités</a>
+  <a href=\"\" class=\"btn btn-primary\">Modifier activité</a>
+  </div>
+  </div>";
+  mysqli_close(bddConnect());
 
-  }
+}
 ?>

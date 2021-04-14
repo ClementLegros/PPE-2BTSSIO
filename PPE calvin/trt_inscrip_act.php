@@ -8,18 +8,21 @@ $USER = $_GET['USER'];
 $NOACT = $_GET['NOACT'];
 $DATEANNULE = $_GET['DATEANNULEACT'];
 
-#
+
 #On vérifie que l'utilisateur n'est pas déjà inscrit à l'activité.
-$verificationReq = "SELECT COUNT* FROM INSCRIPTION WHERE USER = '$USER'  AND NOACT='$NOACT'";
-$VerificationResultat = mysqli_query(bddConnect(), $verificationReq);
-if($VerificationResultat = 1)
+$verifReq = "SELECT COUNT* FROM INSCRIPTION WHERE USER = '$USER'  AND NOACT='$NOACT'";
+$VerifRes = mysqli_query(bddConnect(), $verifReq);
+
+if($VerifRes = 1)
 {
-  $NumeroDInscription = "SELECT NOINSCRIP FROM INSCRIPTION WHERE USER = '$USER'  AND NOACT='$NOACT'";
-  $NumeroDInscriptionRes = mysqli_query(bddConnect(), $NumeroDInscription);
-
-  echo "vous êtes déjà inscrit à cette activité";
-
-  header('Refresh: 5000 ;Location: index.php?index=\activite&activite=\'.$CODEANIM');
+  $NoInscri = "SELECT NOINSCRIP FROM INSCRIPTION WHERE USER = '$USER'  AND NOACT='$NOACT'";
+  $NoInscriRes = mysqli_query(bddConnect(), $NoInscri);
+  while($ligne = mysqli_fetch_assoc($NoInscriRes))
+  {
+    $NumInscri = $ligne['NOINSCRIP'];
+  }
+  echo 'vous êtes déjà inscrit à cette activité sous le numéro'.' '.$NumInscri;
+  header("Refresh: 10; url= index.php?index=activite&activite=".$CODEANIM);
 
 
 }
@@ -28,16 +31,18 @@ else
   #On peut insérer l'utilisateur
   $Inscription = "INSERT INTO inscription VALUES(NULL,'$USER', '$NOACT', NOW(), '$DATEANNULE')";
   $InscriptionResultat = mysqli_query(bddConnect(), $Inscription);
-
-  #On Va récupérer son numéro d'inscription ensuite
-  $NumeroDInscription = "SELECT NOINSCRIP FROM INSCRIPTION WHERE USER = '$USER'  AND NOACT='$NOACT'";
-  $NumeroDInscriptionRes = mysqli_query(bddConnect(), $NumeroDInscription);
-  echo "Vous êtes inscrit à cette activité sous le numéro".$NumeroDInscriptionRes;
-  Sleep(5);
-  header('Location: index.php?index=activite&activite='.$CODEANIM);
+  $NoInscri = "SELECT NOINSCRIP FROM INSCRIPTION WHERE USER = '$USER'  AND NOACT='$NOACT'";
+  $NoInscriRes = mysqli_query(bddConnect(), $NoInscri);
+  while($ligne = mysqli_fetch_assoc($NoInscriRes))
+  {
+    $NumInscri = $ligne['NOINSCRIP'];
+  }
+  #On Va récupérer
+  echo "Vous êtes inscrit à cette activité sous le numéro".$NumInscri;
+  header("Refresh: 10; url= index.php?index=activite&activite=".$CODEANIM);
 
 
 
 }
 
- ?>
+?>
