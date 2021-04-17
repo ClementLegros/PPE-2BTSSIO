@@ -16,12 +16,10 @@ bddConnect();
     <option value="7">7</option>
     <option value="8">8</option>
     <option value="9">9</option>
-    <option value="6">10</option>
+    <option value="10">10</option>
   </select>
 
   <label>Code type animation</label>
-
-
   <select class="newAnimation" name="CODETYPEANIM">
     <option value="">Choisissez un type d'animation</option>
     <?php
@@ -31,11 +29,12 @@ bddConnect();
       echo "<option value=".$lignes['CODETYPEANIM'].">".$lignes['CODETYPEANIM']."</option>";
     }
     ?>
+
   </select>
   <label>Nom animation</label>
   <input class="form-control"  name="NOMANIM" type="text" placeholder="Default input">
 
-  <label>Date and time</label>
+  <label>DATE VALIDITÉ ANIMATION</label>
   <input name="DATEVALIDITEANIM" class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
 
 
@@ -70,7 +69,7 @@ bddConnect();
   <label>Difficulte animation:</label>
   <input class="form-control" type="text" name="DIFFICULTEANIM" placeholder="Default input">
 
-  <input type="submit" value="Subscribe!">
+  <input type="submit" value="Valider">
   <!-- <button type="submit" name="button" form="insertanim" class="btn btn-primary">Ajouter ezaaeaer</button> -->
 
 </form>

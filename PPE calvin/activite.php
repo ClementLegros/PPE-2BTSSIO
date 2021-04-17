@@ -67,9 +67,7 @@ if(!empty($_GET['activite']))
 		</form>";
 		if($TYPEPROFIL == 'EN')#SI LE PROFIL EST ENCADRANT ALORS ON AFFICHE UN BOUTON CONSULTE ANNIME
 		{
-			echo	"<td><form class=\"\" action=\"\" method=\"\">
-			<button type=\"submit\" class=\"btn btn-info\">INSCRITS</button>
-			</form></td>";
+			echo	"<td><a href=\"index.php?index=participant&NOACT=$NOACT\" class=\"btn btn-info btn-lg\" role=\"button\" aria-disabled=\"true\">Participants</a></td>";
 
 			echo "<td> <form class=\"\" action=\"\" method=\"\">
 			<button type=\"submit\" class=\"btn btn-danger\">ANNULER</button>

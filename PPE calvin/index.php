@@ -73,8 +73,12 @@ if(empty($_SESSION))
 
       break;
 
-      case 'create':
-      include("create.php");
+      case 'creeanim':
+      include("creeanim.php");
+      break;
+
+      case 'modifanim':
+      include("modifanim.php");
       break;
 
       case 'profil':
@@ -85,7 +89,18 @@ if(empty($_SESSION))
       include("activite.php");
       break;
 
-    }
+      case 'participant':
+      include("participant.php");
+      break;
+
+      case 'creeact':
+      include("creeact.php");
+      break;
+
+      case 'modifact':
+      include("modifact.php");
+      break;
+     }
   }
 
   ?>
