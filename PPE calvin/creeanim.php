@@ -3,7 +3,7 @@
 include("fonctions.php");
 bddConnect();
 ?>
-<form class="insertanim" action="trt_enreg_anim.php" method="post">
+<form class="" action="trt_enreg_anim.php" method="post">
   <label>Code anime</label>
   <select class="custom-select" name="CODEANIM" id="inputGroupSelect01">
     <option selected>Choose...</option>
@@ -21,7 +21,7 @@ bddConnect();
 
   <label>Code type animation</label>
   <select class="newAnimation" name="CODETYPEANIM">
-    <option value="">Choisissez un type d'animation</option>
+    <option>Choisissez un type d'animation</option>
     <?php
     $req = "SELECT NOMTYPEANIM, CODETYPEANIM FROM TYPE_ANIM;";
     $res = mysqli_query(bddConnect(), $req);
@@ -31,6 +31,7 @@ bddConnect();
     ?>
 
   </select>
+
   <label>Nom animation</label>
   <input class="form-control"  name="NOMANIM" type="text" placeholder="Default input">
 
