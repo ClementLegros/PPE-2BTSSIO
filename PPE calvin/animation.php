@@ -5,7 +5,7 @@ bddConnect();
 
 if($_SESSION['TYPEPROFIL'] == 'EN')
 {
-  echo "<a href=\"index.php?index=creeanim\" class=\"btn btn-primary btn-lg\" tabindex=\"-1\" role=\"button\" aria-disabled=\"true\">Primary link</a>";
+  echo "<a href=\"index.php?index=creeanim\" class=\"btn btn-primary btn-lg\" tabindex=\"-1\" role=\"button\" aria-disabled=\"true\">Nnouvelle animation</a>";
 }
 ?>
 
@@ -38,10 +38,10 @@ while($ligne = mysqli_fetch_assoc($res))
   <p>Type d'Animation:$CODETYPEANIM </p>
   <p>Code Animation:$CODEANIM </p>
   <a href=\"index.php?index=activite&activite=$CODEANIM\" class=\"btn btn-primary\">Voir les activités</a>
-  <a href=\"index.php?index=modifanim&CODEANIM=$CODEANIM\" class=\"btn btn-primary\">Modifier activité</a>
+  <a href=\"index.php?index=modifanim&CODEANIM=$CODEANIM\" class=\"btn btn-primary\">Modifier anime</a>
   </div>
   </div>";
-  mysqli_close(bddConnect());
+
 
 }
 ?>

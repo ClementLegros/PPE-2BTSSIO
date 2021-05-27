@@ -9,6 +9,11 @@ $USER = $_SESSION['USER'];
 $DATEDEBSEJOUR = $_SESSION['DATEDEBSEJOUR'];
 $DATEFINSEJOUR = $_SESSION['DATEFINSEJOUR'];
 
+if($TYPEPROFIL == 'EN')
+{
+   echo "<a href=\"index.php?index=creeact\" class=\"btn btn-primary btn-lg\" tabindex=\"-1\" role=\"button\" aria-disabled=\"true\">nouvelle activité</a>";
+
+}
 
 if(!empty($_GET['activite']))
 {

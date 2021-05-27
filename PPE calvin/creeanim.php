@@ -61,7 +61,7 @@ bddConnect();
   <input class="form-control" type="text" name="NBREPLACEANIM" placeholder="Default input">
 
   <label>Description animation:</label>
-  <input class="form-control" type="text" name=\"DESCRIPTANIM" placeholder=\"Default input\">
+  <input class="form-control" type="text" name="DESCRIPTANIM" placeholder="Default input">
 
   <label>Commentaire:</label>
   <input class="form-control" type="text" name="COMMENTANIM"placeholder="Default input">

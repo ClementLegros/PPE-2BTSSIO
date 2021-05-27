@@ -31,7 +31,7 @@ else
   $DIFFICULTANIM = $_POST['DIFFICULTEANIM'];
   $req2 = "INSERT INTO animation (CODEANIM, CODETYPEANIM, NOMANIM, DATECREATIONANIM, DATEVALIDITEANIM, DUREEANIM, LIMITEAGE, TARIFANIM, NBREPLACEANIM, DESCRIPTANIM, COMMENTANIM, DIFFICULTEANIM)
   VALUES ('$CDANIM', '$CDTYPEANIM' , '$NOMANIM' , NOW(), '$DATEVALIDITEANIM', '$DUREEANIM', '$LIMITEAGE', '$TARIFANIM', '$NBREPLACEANIM', '$DESCRIPTANIM', '$COMMENTANIM', '$DIFFICULTANIM');" ;
-  $res2 = mysqli_query(bddConnect(), $req);
+  $res2 = mysqli_query(bddConnect(), $req2);
 
   echo "Votre animation a bien été enregistré";
   header('Refresh: 3; url=index.php?index=animation');
