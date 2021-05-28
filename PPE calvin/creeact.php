@@ -38,13 +38,13 @@ bddConnect();
 
 
   <label>Code type animation</label>
-  <select class="custom-select" name="CODEETATANIM">
+  <select class="custom-select" name="CODEETATACT">
     <option>Choisissez un etat</option>
     <?php
     $req = "SELECT CODEETATACT FROM ETAT_ACT;";
     $res = mysqli_query(bddConnect(), $req);
     while ($lignes = mysqli_fetch_assoc($res)) {
-      echo "<option value=".$lignes['CODETETATACT'].">".$lignes['CODETETATACT']."</option>";
+      echo "<option value=".$lignes['CODEETATACT'].">".$lignes['CODEETATACT']."</option>";
     }
     ?>
 

@@ -70,6 +70,14 @@ if(!empty($_GET['activite']))
      <form class=\"\" action=\"trt_inscrip_act.php?CODEANIM=$CODEANIM&USER=$USER&NOACT=$NOACT&DATEANNULEACT=$DATEANNULEACT&DATEDEBSEJOUR=$DATEDEBSEJOUR&DATEFINSEJOUR=$DATEFINSEJOUR\" method=\"post\">
 		<td> <button type=\"submit\" class=\"btn btn-success\">INSCRIPTION</button> </td>
 		</form>";
+    if($TYPEPROFIL == 'VA')
+    {
+      echo "<td> <form class=\"\" action=\"trt_desin.php?USER=$USER\" method=\"post\">
+      <button type=\"submit\" class=\"btn btn-danger\">S'ANNULER</button>
+      </form></td>";
+
+    }
+
 		if($TYPEPROFIL == 'EN')#SI LE PROFIL EST ENCADRANT ALORS ON AFFICHE UN BOUTON CONSULTE ANNIME
 		{
 			echo	"<td><a href=\"index.php?index=participant&NOACT=$NOACT\" class=\"btn btn-info btn-lg\" role=\"button\" aria-disabled=\"true\">Participants</a></td>";

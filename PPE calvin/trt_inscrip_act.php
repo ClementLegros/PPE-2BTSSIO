@@ -65,7 +65,7 @@ else
   else
   {
     #A faire
-    if($DATEANNULE > $DATEFINSEJOUR )
+    if($DATEANNULE > $DATEFINSEJOUR  )
     {
       echo "vous ne pouvez pas vous inscrie car votre période de séjour ne comprends pas cette activité";
       header("Refresh: 10; url= index.php?index=activite&activite=".$CODEANIM);
